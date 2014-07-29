@@ -37,6 +37,7 @@ matrix:
     after_script: bundle exec kitchen destroy default-ubuntu-1204
     env:
     - EC2_SSH_KEY_PATH=~/.ssh/id_aws.pem
+    - KITCHEN_YAML=.kitchen.travis.yml
     - secure: E8jvV+B/L7lUOzEfZyOkbB3Lb1LNQrY4bwu5Z2jm4PzJVh7FtdkL9J9avrHSyRR7acHRCWaILEErESFZ+Z3pBeDqpI3g8nJ0OwPSSs9bUXzrweTyJH+gSeVbIa1hOOMuseauyyVpQlIUpgmINCSbZTvl6VUqTiylyHOsEctQ9LI=
     - secure: Uf8yKCRuhBEob4B8PCL571n9yevrb5vlJ24yHZvA398po3GqQt1ovrWpxyPP/F7SjkEe3D+iElI8W4Sax5EiFF+xfvVHDQzMXFKuMTc3xxmyBt/ryGfNXyP5VHH7Qu1fI76yAr0UexPV45mp7QVgQ8saIfsaHbe3puNwuygBwzM=
     - secure: L/PSaeWToJkyDbPiP4A8Ck0MlzVAqc/HaG9k4+AHY5DUKJYfSbweP53jIhf8uSPAOSAOATfc7P39/62JrWWevBnnkHzVoZQyVGxK81NC+CwSNCuBJNn6a6qqjb366iuRVG2Elt310G5126lH0wXdcFXxfs95sK4jE5LYoAQJdjY=
