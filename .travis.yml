@@ -34,8 +34,10 @@ matrix:
     - echo -n $DO_KEY_CHUNK_{0..30} >> ~/.ssh/id_aws.base64
     - cat ~/.ssh/id_aws.base64 | tr -d ' ' | base64 --decode > ~/.ssh/id_aws.pem
     before_script: cd spec/e2e
-    script: bundle exec kitchen test default-ubuntu-1204
-    after_script: bundle exec kitchen destroy default-ubuntu-1204
+    script:
+    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && bundle exec kitchen test || true'
+    after_script:
+    - '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && bundle exec kitchen destroy || true'
     env:
     - EC2_SSH_KEY_PATH=~/.ssh/id_aws.pem
     - KITCHEN_YAML=.kitchen.travis.yml
